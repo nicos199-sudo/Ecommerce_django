@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="p-4 m-4">
+            <div class="col-lg-5 mx-auto border rounded pt-4 shadow-lg p-3 mb-5 bg-white rounded">
+                <form   method="POST">
+                    {% csrf_token %}
+
+                    <img style='width: 140px;margin-left: 132px;' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAxlBMVEX8/v/sMSbsLyTsLCHrJBfrHxDsHQDrFQDrHAzsKgz8/vvsMyT2ta33w7rrGQbtOCX4z8j79fLzlYvrIhX539nrAAD8+/zvVkT0q6n0qaPuXFbtPiv47uzvraf00c72vLTyj4XyhXr53NfvamXtnZfqg3r35eP1rqX1vLvwbF/vY1XzmpDtQC/xwb3xeGz53tfpUkjxgHTuSzrlaWDyzMrtiIPoST7uc27unpjusK7oe3bqhn754uPoSD33wbr2tKnuSjb0nIx2H4XuAAAL2klEQVR4nO2c+0PaOhvH21yaiqyCoTKkXGQKchER9Xjb3N7//5968yRtaQvtPDsbre75/HDkNFCa75LnlgTLQhAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRDk72Y8auU3noxP9vckFWE8XHhCrPs7G5udFfdv9/xEZdO8EIzYtk3FLlE6nFN31dz7U5VK/5DZBkq3pkiw8ogtXqxx73z3KPqQXAliR7ifM41jRm0iOlbP59K/KuX5SuAuIYlNV+nGgFLbFgPLOlV/6aKcJ9w7AU9IYhMv3boCSXrqxRymlxiX8oh755bZSUTKlvY82+bH8OqJQ+NdOc+4Z1rCLtDkkNj0H/3qylWN3t+hyX16mBA32XilBBMj8xI0EV9LecZ9syApTcJREfLMbBrGapdKE8KDMh5x3wRuWhN2n2xdk3i6fFb2hKzLeMS98zVrTlIWw1HRWvgS5hg7LuEJ909GE2KnWgWJ4xWIT/y/w5wEXkoTr5dqXRD6YF411Rxjf0saaCftCc0YjGcWaaLCE+L8FRbWSvtiko1TVSYUqqTck3ja/9OVw3hjUMh2jregJoZ75La43/7wR+U8EoWK163Gvi/nlh4vf5MklnWh82LCu7vKI09CzBv3gjkfeuI0r46n68ViPTu+ClObQVd4ovsYVpOao8vOY+fpLjSoo5Xv++wi/L9W72XWbs+eH+8+UHm2/+B5jFJCCGWe92ByGWvUCCOPk97MES6Xknve+tjUrMeNvhGg+bgQXH2YUiYFf/ggVbfgVtCE7yVM3KTS4HPp0o1jluI26Yd6ktPUZ2cfoZpyxdNJMOQ3h6O4ebzOJD82E3EMF5x6mUZllHs7v+Y90RPZXumORQ74zqNbrURcmMYRpWpouGpeuY7HGQlb33sC9CS2umw6ZkQZ7VJMRfsv0Nj3KHXZ82AUBMG4P7joCqOfmJfapf9KTp9BFLCWJzSnGSbIyKPuepB0Nf1bo4p416X89fbMiERxx7p8lIMYB5K5nez9Riuuvdc7XgvruHl9tiHhzdZREtAvK7Half4dCynle45vec7UANwn6yJ3mIAZftl9z6Zmv/34jVx6+X0mXlAomTwv++n/DF9yrYkaB9+sfv7UUZpk10vTNL9+/ZXgrRaMyx1iJ6xgHLB7q8cLNGHP5iY5XTgQwh/8+0c6EI7f+PUe/XcKTKht8yfruMCcxGvIYGdbnw29QbyB54DYvP7vH0mFBu52cWKPXBWYE9vrZ1e+0pBDcxOIT45cbnDF0cRc/kVNHGXbP/22Dv4ClwWeGFb3ijVJrKsfqTlIAIj1pvrSx9QksOayoD1e47G0JsRe2CrQh+s6kHuvmhTOHdG0OkU2NqMJgxwnGMK6YBcuvVdNCn2tGieFmhG2uRFoYpLhmUqUPXBF71WToFCTcbJ6v42KX2I2mjxKHeylNGksj4QvjqYbfzIerh3fP1g9xo683nZ8Z9oqX5P00lZWk35x6B+tewEbTZT7JhJexJoEbbN7klDRDvOjoWCQbxPKo/7PoNJHmPjOStfktCCOVfFJYZwrE0WSWJOaeiXP4FWkSRN2T1KpC070UBcWlh70n0sKi0c6QFuC4aKMEDDqJWtS5Fhgf0VRIOslaiSgyVmrdf26pjZb6AkRaTJTksj2pD6HbYFarrqA/s/rk5WEKKcG60Xwb9C+WeivK1mTuwIjCvYiyKs4KZLrxBCfMCGES226NJdCTaC77AYuNMFhg/lVI4Z0tW43Si9PJQBLmDEQ681F+ZqcFBhRvTieP7lS20OPNtKR7llynJwp++LU9JteVTTkfbIa6jvD8L2p3sSUhsqW0Jm+AgO3ZE0KDQYYlKtc0fhj4jbROBFcuWJJE34HJlM4cpoOASOkPJMtjErWVI2rH9q9RT6qfL9TGMnSU2trY9sGP1ljA3syDILxdX2hRGbwb240aTKyMcYLsDowUciP8Ap4qQMdJoV7BqugSWG1APZY5JT1o7EesvHFtR+wc6kVawJ/wqzQ+kZBExgb0byDaObAaiirJsKEugKaWC8FaZ7e2fdt9+xK73DbaGLVuZkIG01kVMhex5q0wyvzSmpSFKpqL7E7/k9vDk1q0lCzEUaG0aRGYVaZlhMzj270fDGo13RtjdRXeGEhqQqa/Dwse94Vw2QWcBKadKRxK6GN/UdbUY3u+pVOLKOdT10Cjjpw4s2TI68KmowKB4oypCfdbdWy5zSivFiNOwjaVfoYaTJUc1OYMQDpodvUX2giFus7eOdXU2qQ4MFbkEyUr4n1UGRRIKfZsVQoRul7qE7R5aBen5xBp7TzDTVpqZiNyHrTai3VAJJD1QIau2djK+ioGJ8eWUY4ur4aPeoF+QpoUpwcwwJpL/sOmV3RgviEQu0R3BjrJmsFN1BR4SovhpM+EMhbDV9HM76QJMx3dLhMXXUBEoAKaGKdF8Uo+rzSS/odOkdJEa8qE8rENJXvqJQ3bCS8a2KaiR/NRiZMab/u6/cQdzaQJdeoQ3LcrRkSerHvNmVnt8/rLH0folhfHKyGUfAVr2VMurDHyRXsOJKyPxMel9wT06jM/8oEl54zH6lpVO5aRkj2sI69LcBpQhR3x/aSk5DEpcTiVet1MqmnTFBwNZlMGomloVpj0nltWpzZcmJVgU6R72F6wG9EyfqcvHt+CTmrv309sHb4axXLP8GXorVyo8EXntLopwgawrhYvnW5s0qanCyKTIoJJh5MrWXn+ettmg7IyRg4IiLferK0SppY46LKq2d2EByDA3nzBj4HEuv7++UCfJb7xs1cldJEpTVFCbIRoieI9+bte0oTYy0HIl3jL6JamliXhc7HeNW+W3xWJ+l2QBOTEE9hb2TYVLu+u7vL/lBGK75UMU106ThfFBNH3Y1yPjw/ODykyap1QhMVchCqQ5PXqQpiPCGcoTa6I9/3X63G2vc8f63vvNFkKXy/bZXOzo2yIUSPlMCWO0UJZi4hJJ0rp8aJ8V0rvYijje4RiNIQNh/MzU5JqlOoWJM5nOq++aPdfRuDQpvSsYIuJd6OXZ6XsLucZKLb2J5ATdqHYTb2Iac5cES0qNHwbPJD2lRCJKArCpEm8BlWgWFipX/KYluU+YJB14eZDwW3JoPL+GjwO8vJ5HHpEpUF6zf6YvaqgpvRWhkYx9KaqGHjzR5v9MntUaxJU2WHdFGRbYIjlhunsHVgWvm3lI3s6f0V1M4Gqzo+4VyqAIX9z1zqhBNP1xrH5q8tYKpMuCnOhZrMWJUOco8XORGte6o8R7CWeurfx3nxaKVLHnL793JAEwLHX6B5nZIR6mpQfwVN+He4UmOmUKc1ee2oOeXkWfMSOLndtTQYn3F7AOdEJOto3xrchFvJn7dvpPpNFuv1gunCSVSCtmpBEFy7G03CH4eA8nWoCYWZxKuQG2843zYq1Il3MHa0CoQfXvR6z+aQy+7DKbGNHU9ZdBw3mLepcsV6yqQ1aW80sfU6emVmjuGOZeYP/5YwFqOubiWMc1NJYt2dw3zji6HDtq9u8d2XlEAOVKgJPeNvTr73RzBLHlQimT3kJw8i1Xq7+wxgQpOJ1AX7T77qsDu7Px7SIk346xDeX40qSoKeE/sfdrhVVRtsTrtRnrcvOKEJLIO5n6DfVNvipleoyQD+S0TFZo8yAsafqEd72BEmBGGNlYjT3CdPaAJbKlT04StltOn8iSZ165PILr5Wg47LKXXtnMNJdS6pij4KCgdOvCO/A6HZgQWamNW+Af+JJhaYZfELO9P/NMF8Nu3lnhcO7tvt86LhDXHs6ma5nHZ5GJkdED13anNdhynUBH6ThjgVCWR/H2GdjerNfD4E93MX/PaRIwn7mSbWxLPjfSsfh7geS6U40tOg1nb1FnTZPZZEXEOmR4gfxWyED9VblISerhW0GSGVWNT4ncxPQ6bzuGvzIyEEG9YaR91FACeXu92VmZ3DbncBWky73R86mRy31ZUKWpQ/QHA9zq4hIgiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIB+Q/wMEg8pXsHte5wAAAABJRU5ErkJggg==" alt="">
+                    
+                    {% if error %}
+                    <div class="alert alert-danger" role="alert">
+                      {{error}}
+                    </div>
+                    {% endif %}
+                    <div class="form-group">
+                        <label for="">First Name</label>
+                        <input type="text" value="{{values.first_name}}" name="firstname" id="" class="form-control" placeholder="first name">
+                       
+                      </div>
+
+                      <div class="form-group">
+                        <label for="">Last Name</label>
+                        <input type="text" value="{{values.last_name}}" name="lastname" id="" class="form-control" placeholder="last name">
+                       
+                      </div>
+
+                  <div class="form-group">
+                    <label for="">Email</label>
+                    <input value="{{values.email}}" type="email" name="email" id="" class="form-control" placeholder="example@gmail.com">
+                   
+                  </div>
+
+                  <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" value="{{values.password}}" name="password" id="" class="form-control" placeholder="**********">
+                   
+                  </div>
+ 
+                  <div class="form-group">
+                      <input  class="form-control btn btn-danger" type="submit" value="sign up">
+                  </div>
+                  
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
